@@ -38,7 +38,7 @@ After downloaded you must enter the directory and execute the next command:
 ## How to use it:
 
 To initializate the Shell process you need to run:
-`/hsh`
+`./hsh`
 
 And now you can type and execute commands, see below:
 
