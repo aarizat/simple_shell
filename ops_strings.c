@@ -51,6 +51,12 @@ char *_strcpy(char *dest, char *src)
 		dest[c] = '\0';
 	return (dest);
 }
+/**
+ * *_strcat - Concatenates two strings.
+ * @dest: The variable had within one string.
+ * @src: Contains within other string.
+ * Return: dest.
+ */
 char *_strcat(char *dest, char *src)
 {
 	int i1, i2;
