@@ -1,3 +1,5 @@
+#include "functions.h"
+
 /**
  * _strlen - Calculate the lenght of a string
  * @s: string
@@ -48,4 +50,38 @@ char *_strcpy(char *dest, char *src)
 	if (c < length)
 		dest[c] = '\0';
 	return (dest);
+}
+char *_strcat(char *dest, char *src)
+{
+	int i1, i2;
+
+	i1 = i2 = 0;
+	while (dest[i1])
+		i1++;
+	while (src[i2])
+	{
+		dest[i1 + i2] = src[i2];
+		i2++;
+	}
+	return (dest);
+}
+/**
+ * *_strdup - return returns the copy of a string in a pointer.
+ * @str: array for duplicate.
+ * Return: the copy of array or NULL if the memory is insufficient.
+ */
+char *_strdup(char *str)
+{
+	char *cpy;
+	unsigned int i, size;
+
+	if (str == NULL)
+		return (NULL);
+	size = _strlen(str);
+	cpy = malloc(size + 1 * sizeof(char));
+	if (cpy == NULL)
+		return (NULL);
+	for (i = 0; i <= size; i++)
+		cpy[i] = str[i];
+	return (cpy);
 }
