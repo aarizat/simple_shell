@@ -119,7 +119,7 @@ char **get_argv(char *input)
 	}
 	free_list(head);
 	av[count] = NULL;
-	/* exe_builtin(av); */
+	exe_builtin(av);
 	if (av[0][0] != '/')
 	{
 		tmp = dir_path(av[0]);
