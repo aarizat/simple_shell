@@ -40,9 +40,9 @@ typedef struct list_env
 } env_t;
 extern char **environ;
 char *get_commands(void);
-list_t *_add_node_at_end(list_t **head, const char *str);
+list_t *add_node_at_end(list_t **head, const char *str);
 int _strlen(const char *s);
-int _strcmp(char *s1, char *s2);
+int _strcmp(const char *s1, const char *s2);
 char *_strdup(const char *str);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
@@ -51,7 +51,7 @@ env_t *add_node_list_env(env_t **head, char *str);
 char *_getenv(const char *name);
 char **dir_path(char *cmd);
 void free_list(list_t *head);
-void free_list_env(list_t *head);
+void free_list_env(env_t *head);
 void free_array(char **arr);
 void exe_builtin(char **vector);
 #endif
