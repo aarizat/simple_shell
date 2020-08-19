@@ -21,9 +21,9 @@ int _strlen(const char *s)
  *
  * Return: Integer number.
  */
-int _strcmp(char *s1, char *s2)
+int _strcmp(const char *s1, const char *s2)
 {
-	char *r = s1, *l = s2;
+	const char *r = s1, *l = s2;
 	int res = 0;
 
 	for (; *r || *l; r++, l++)
