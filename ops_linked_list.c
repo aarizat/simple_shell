@@ -44,7 +44,7 @@ env_t *add_node_list_env(env_t **head, char *str)
 	new = malloc(sizeof(env_t));
 	if (!new)
 		return (NULL);
-	temp = *head;
+	tmp = *head;
 	new->key = _strdup(token_1);
 	new->value = _strdup(token_2);
 	new->next = NULL;
@@ -53,9 +53,9 @@ env_t *add_node_list_env(env_t **head, char *str)
 		*head = new;
 		return (new);
 	}
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = new;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new;
 	return (new);
 }
 /**
@@ -80,7 +80,7 @@ void free_list(list_t *head)
  *
  * Return: nothing.
  */
-void free_list_env(list_t *head)
+void free_list_env(env_t *head)
 {
 	while (head != NULL)
 	{
