@@ -6,7 +6,7 @@
  *
  * Return: lenght of the s string
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int count = 0;
 
@@ -23,7 +23,7 @@ int _strlen(char *s)
  */
 int _strcmp(char *s1, char *s2)
 {
-	char *r = s1, char *l = s2;
+	char *r = s1, *l = s2;
 	int res = 0;
 
 	for (; *r || *l; r++, l++)
@@ -76,7 +76,7 @@ char *_strcat(char *dest, char *src)
  * @str: array for duplicate.
  * Return: the copy of array or NULL if the memory is insufficient.
  */
-char *_strdup(char *str)
+char *_strdup(const char *str)
 {
 	char *cpy;
 	unsigned int i, size;
