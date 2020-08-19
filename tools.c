@@ -43,8 +43,7 @@ char *get_commands(void)
 {
 	char *string, *line = NULL;
 	size_t len = 0;
-	int read;
-	unsigned int i;
+	int read, i;
 
 	write(1, "$ ", 2);
 	read = getline(&line, &len, stdin);
@@ -120,7 +119,7 @@ char **get_argv(char *input)
 	}
 	free_list(head);
 	av[count] = NULL;
-	exit_own(av);
+	exe_builtin(av);
 	if (av[0][0] != '/')
 	{
 		tmp = dir_path(av[0]);
