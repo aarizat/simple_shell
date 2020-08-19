@@ -136,7 +136,7 @@ char **get_argv(char *input)
 	return (av);
 }
 /**
- * exe_builtins - executes builtins commands.
+ * exe_builtin - executes builtins commands.
  * @vector: array of string.
  *
  * Return: nothing.
