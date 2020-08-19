@@ -38,7 +38,7 @@ typedef struct list_env
 	struct list_env *next;
 
 } env_t;
-
+extern char **environ;
 char *get_commands(void);
 list_t *_add_node_at_end(list_t **head, const char *str);
 int _strlen(char *s);
