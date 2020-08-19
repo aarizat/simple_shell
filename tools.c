@@ -87,3 +87,80 @@ char *_getenv(const char *name)
 	free_list_env(head);
 	return (value);
 }
+/**
+ * get_argv - takes the string from the command lines and tokenizes it
+ * adding the divided string in an array of string.
+ * @input: string from command line.
+ *
+ * Return: array of string.
+ */
+char **get_argv(char *input)
+{
+	int count = 0, i = 0;
+	char *t, **av, *_array, **tmp;
+	list_t *head = NULL;
+	struct stat st;
+
+	_array = _strdup(input);
+	free(input);
+	t = strtok(_array, " ");
+	while (t != NULL)
+	{
+		add_node_at_end(&head, t);
+		count++;
+		t = strtok(NULL, " ");
+	}
+	free(_array);
+	av = malloc(sizeof(char *) * (count + 1));
+	while (i < count)
+	{
+		av[i] = _strdup(head->str);
+		head = head->next;
+		i++;
+	}
+	free_list(head);
+	av[count] = NULL;
+	exit_own(av);
+	if (av[0][0] != '/')
+	{
+		tmp = dir_path(av[0]);
+		for (i = 0; tmp[i]; i++)
+		{
+			if (stat(tmp[i], &st) == 0  && st.st_mode & S_IXUSR)
+			{
+				free(av[0]);
+				av[0] = _strdup(tmp[i]);
+			}
+			free_array(tmp);
+		}
+	}
+	return (av);
+}
+/**
+ * exe_builtins - executes builtins commands.
+ * @vector: array of string.
+ *
+ * Return: nothing.
+ *
+ */
+void exe_builtins(char **vector)
+{
+	int i = 0;
+
+	if (_strcmp(vector[0], "exit") == 0)
+	{
+		free_array(vector);
+		exit(1);
+	}
+	if (_strcmp(vector[0], "env") == 0)
+	{
+		while (environ[i])
+		{
+			write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+			write(STDOUT_FILENO, "\n", 1);
+			i++;
+		}
+		free_array(vector);
+		exit(0);
+	}
+}
