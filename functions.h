@@ -41,9 +41,9 @@ typedef struct list_env
 extern char **environ;
 char *get_commands(void);
 list_t *_add_node_at_end(list_t **head, const char *str);
-int _strlen(char *s);
+int _strlen(const char *s);
 int _strcmp(char *s1, char *s2);
-char *_strdup(char *str);
+char *_strdup(const char *str);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char **get_argv(char *input);
