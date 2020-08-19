@@ -119,7 +119,7 @@ char **get_argv(char *input)
 	}
 	free_list(head);
 	av[count] = NULL;
-	exe_builtin(av);
+	/* exe_builtin(av); */
 	if (av[0][0] != '/')
 	{
 		tmp = dir_path(av[0]);
@@ -130,8 +130,8 @@ char **get_argv(char *input)
 				free(av[0]);
 				av[0] = _strdup(tmp[i]);
 			}
-			free_array(tmp);
 		}
+		free_array(tmp);
 	}
 	return (av);
 }
@@ -142,7 +142,7 @@ char **get_argv(char *input)
  * Return: nothing.
  *
  */
-void exe_builtins(char **vector)
+void exe_builtin(char **vector)
 {
 	int i = 0;
 
