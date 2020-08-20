@@ -40,20 +40,24 @@ After downloaded you must enter the directory and execute the next command:
 To initializate the Shell process you need to run:
 `./hsh`
 
-And now you can type and execute commands, see below:
+And now you can type and execute commands writing its relative path, see below:
 
 ```
 $ ./hsh
 ($) /bin/ls
-hsh main.c shell.c
+AUTHORS  functions.h  hsh  hsh.c  man_1_simple_shell  ops_linked_list.c  ops_strings.c  README.md  tools.c
 ($)
 ($) exit
 $
 ```
 
+Or writing the reserved word of the command, like this:
+```
+($) ls
+AUTHORS  functions.h  hsh  hsh.c  man_1_simple_shell  ops_linked_list.c  ops_strings.c  README.md  tools.c
+($)
+```
+
 ![Holberton logo](https://camo.githubusercontent.com/80e4aef5357b80f03b960818a751e2be258ccc97/68747470733a2f2f7777772e686f6c626572746f6e7363686f6f6c2e636f6d2f686f6c626572746f6e2d6c6f676f2e706e67)
 
 **Designed by [Andrés Ariza](https://github.com/aarizat) and [Juan Uribe](https://github.com/poix-code), cohort 12.**
-
-
-
