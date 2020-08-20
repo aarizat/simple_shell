@@ -39,10 +39,50 @@ Errors that are detected by the shell, such a syntax error, will cause an exit s
 
 No known bugs.
 
-.SH EXAMPLE
+.SH EXAMPLES
+.sp
+.B Execution of command: $ ls -l
+.sp
+$ ls -l
+.nf
+total 64
+drwxrwxr-x 3 juan juan  4096 Aug 19 22:54 .
+drwxrwxr-x 3 juan juan  4096 Aug 19 22:34 ..
+drwxrwxr-x 8 juan juan  4096 Aug 19 22:34 .git
+-rw-rw-r-- 1 juan juan   165 Aug 19 22:34 AUTHORS
+-rw-rw-r-- 1 juan juan  2390 Aug 19 22:34 README.md
+-rw-rw-r-- 1 juan juan  1485 Aug 19 22:34 functions.h
+-rwxrwxr-x 1 juan juan 14000 Aug 19 22:54 hsh
+-rw-rw-r-- 1 juan juan   513 Aug 19 22:34 hsh.c
+-rwxrwxr-x 1 juan juan  2004 Aug 19 22:34 man_1_simple_shell
+-rw-rw-r-- 1 juan juan  1935 Aug 19 22:34 ops_linked_list.c
+-rw-rw-r-- 1 juan juan  1634 Aug 19 22:34 ops_strings.c
+-rw-rw-r-- 1 juan juan  3133 Aug 19 22:34 tools.c
 
-To use
-
+.B Execution of "env" variable:
+$ env
+.nf
+XDG_VTNR=7
+LC_PAPER=es_CO.UTF-8
+LC_ADDRESS=es_CO.UTF-8
+XDG_SESSION_ID=c2
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/juan
+LC_MONETARY=es_CO.UTF-8
+CLUTTER_IM_MODULE=xim
+GPG_AGENT_INFO=/home/juan/.gnupg/S.gpg-agent:0:1
+TERM=xterm-256color
+VTE_VERSION=4205
+SHELL=/bin/bash
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+WINDOWID=100752850
+LC_NUMERIC=es_CO.UTF-8
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1425
+GNOME_KEYRING_CONTROL=
+GTK_MODULES=gail:atk-bridge:unity-gtk-module
+USER=juan
+...
+.sp
+.B Prints all the environment variables of the system. 
 .SH AUTHORS
 
 .B Written by Andrés Ariza and Juan Uribe
