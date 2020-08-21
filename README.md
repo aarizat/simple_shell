@@ -23,6 +23,10 @@ A simple **UNIX** command interpreter is a program that reads commands from the 
 + All your header files should be include guarded
 + Use system calls only when you need to ([why?](https://www.quora.com/Why-are-system-calls-expensive-in-operating-systems))
 
+## Flowchart:
+
+This is the [Flowchart](https://github.com/poix-code/simple_shell/blob/master/Shell.c.png) that describes the process of the simple shell.
+
 ## Installation:
 
 To use this shell first	of all you must	clone this repository, using the next c ommand:
